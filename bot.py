@@ -1,8 +1,9 @@
 import asyncio
 from aiogram import Dispatcher, Bot
 from aiogram.types import Message
+import os
 
-TOKEN = "7387769280:AAHcpy_pXNIHQIYF_cV3B8i-d7Y7GlT8RRY"
+TOKEN = '7387769280:AAHcpy_pXNIHQIYF_cV3B8i-d7Y7GlT8RRY'
 
 
 bot = Bot(token=TOKEN)
@@ -11,7 +12,7 @@ dp = Dispatcher()
 @dp.message()
 async def cmd_start(message: Message):
     await message.answer('Добрый день')
-    await message.reply('Хотите получить доступ к заблокированным сервисам?')
+    await message.answer('Хотите получить доступ к заблокированным сервисам?')
 
 async def main():
     await dp.start_polling(bot)
